@@ -1,1 +1,1 @@
-web: node www\yahoo.js
+web: node yahoo.js
