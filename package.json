@@ -1,17 +1,16 @@
 {
- "name": "stock feed1.0",
+ "name": "stock-feed1.0",
  "version": "0.0.1",
- "dependencies": {
+ "main": "yahoo.js",
+  "scripts": {
+    "start": "node yahoo.js"
+  },
+   "dependencies": {
     "socket.io": "0.9.6",
     "node-static": "0.5.9"
  },
  "engines": {
    "node": "1.x",
    "npm": "1.2.x"
- },
- "scripts": {
-  "start": "node yahoo.js",
-  "test": "mocha",
-  "postinstall": "bower install && grunt build"
-}
+ }
 }
