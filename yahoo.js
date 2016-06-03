@@ -428,8 +428,8 @@ function getFreePort(callback) {
 	firstPort++;
 
 	var server = http.createServer();
-
-	server.listen(port, function (err) {
+	server.listen(process.env.PORT || 3000, function(err){
+	//server.listen(port, function (err) {
 		server.once('close', function () {
 			callback(port);
 		});
