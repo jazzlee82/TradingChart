@@ -40,7 +40,7 @@ function httpGet(path, callback)
 	var req = http.request(options, onDataCallback);
 	
 	req.on('socket', function (socket) {
-		socket.setTimeout(5000);  
+		socket.setTimeout(15000);  
 		socket.on('timeout', function() {
 			console.log('timeout');
 			req.abort();
@@ -428,8 +428,8 @@ function getFreePort(callback) {
 	firstPort++;
 
 	var server = http.createServer();
-	server.listen(process.env.PORT || 5000, function(err){
-	//server.listen(port, function (err) {
+	//server.listen(process.env.PORT || 5000, function(err){
+	server.listen(port, function (err) {
 		server.once('close', function () {
 			callback(port);
 		});
