@@ -428,11 +428,12 @@ function getFreePort(callback) {
 	firstPort++;
 
 	var server = http.createServer();
-	//server.listen(process.env.PORT || 5000, function(err){
-	server.listen(port, function (err) {
+	server.listen(process.env.PORT || 5000, function(err){
+	//server.listen(port, function (err) {
 		server.once('close', function () {
 			callback(port);
 		});
+		console.log("process.env.PORT:" + process.env.PORT);
 		server.close();
 	});
 
