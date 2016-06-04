@@ -365,7 +365,7 @@ RequestProcessor = function(action, query, response) {
 				+ "&env=store://datatables.org/alltableswithkeys",
 		};
 		// for debug purposes
-		// console.log(options.host + options.path);
+		 console.log(options.host + options.path);
 
 		http.request(options, function(res) {
 			var result = '';
@@ -422,14 +422,14 @@ RequestProcessor = function(action, query, response) {
 //		/search?query=B&limit=10
 //		/history?symbol=C&from=DATE&resolution=E
 
-var firstPort = 3000;
+var firstPort = 5000;
 function getFreePort(callback) {
 	var port = firstPort;
 	firstPort++;
 
 	var server = http.createServer();
-	//server.listen(process.env.PORT || 3000, function(err){
-	server.listen(port, function (err) {
+	server.listen(process.env.PORT || 5000, function(err){
+	//server.listen(port, function (err) {
 		server.once('close', function () {
 			callback(port);
 		});
