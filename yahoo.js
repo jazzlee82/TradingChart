@@ -422,7 +422,8 @@ RequestProcessor = function(action, query, response) {
 //		/search?query=B&limit=10
 //		/history?symbol=C&from=DATE&resolution=E
 
-var firstPort = 5000;
+//var firstPort = 5000;
+var firstPort = process.env.PORT;
 function getFreePort(callback) {
 	var port = firstPort;
 	firstPort++;
