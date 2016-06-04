@@ -84,7 +84,7 @@ function convertYahooHistoryToUDFFormat(data) {
 		result.c.push(parseFloat(items[4]));
 		result.v.push(parseFloat(items[5]));
 	}
-
+	console.log("result: " + result);
 	return result;
 }
 
@@ -428,8 +428,8 @@ function getFreePort(callback) {
 	firstPort++;
 
 	var server = http.createServer();
-	server.listen(process.env.PORT || 5000, function(err){
-	//server.listen(port, function (err) {
+	//server.listen(process.env.PORT || 5000, function(err){
+	server.listen(port, function (err) {
 		server.once('close', function () {
 			callback(port);
 		});
