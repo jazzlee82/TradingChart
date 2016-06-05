@@ -423,7 +423,7 @@ RequestProcessor = function(action, query, response) {
 //		/history?symbol=C&from=DATE&resolution=E
 
 //var firstPort = 443;
-var firstPort = process.env.PORT;
+var firstPort = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000 ;
 function getFreePort(callback) {
 	var port = firstPort;
 	firstPort++;
@@ -434,7 +434,7 @@ function getFreePort(callback) {
 		server.once('close', function () {
 			callback(port);
 		});
-		console.log("process.env.PORT:" + process.env.PORT);
+		console.log("process.env.PORT:" + firstPort);
 		server.close();
 	});
 
